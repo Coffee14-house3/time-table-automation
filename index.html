@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hindustan University Portal</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#8fb7d1;   /* darker blue background */
+}
+
+/* MAIN LAYOUT */
+
+.container{
+display:flex;
+height:100vh;
+}
+
+/* LEFT SIDE */
+
+.left{
+width:40%;
+padding:40px;
+}
+
+/* LOGO */
+
+.logo{
+width:450px;
+margin-left:55px;   /* move logo right */
+margin-bottom:30px;
+}
+
+/* LOGIN BOX */
+
+.login-box{
+background:#7eaed0;
+padding:30px;
+border-radius:15px;
+width:320px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+margin-left:90px;   /* move box right */
+}
+
+.login-box h2{
+text-align:center;
+margin-bottom:20px;
+color:white;
+}
+
+/* INPUT */
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-bottom:2px solid white;
+background:transparent;
+outline:none;
+color:white;
+font-size:15px;
+}
+
+::placeholder{
+color:white;
+}
+
+/* BUTTON */
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+background:white;
+color:#3b6f9e;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+/* SWITCH BUTTONS */
+
+.switch{
+text-align:center;
+margin-bottom:15px;
+}
+
+.switch button{
+width:45%;
+margin:5px;
+background:#5e9ac4;
+color:white;
+border:2px solid white;
+}
+
+/* TEXT */
+
+.extra{
+font-size:14px;
+text-align:center;
+margin-top:10px;
+}
+
+.extra a{
+color:yellow;
+cursor:pointer;
+}
+
+/* RIGHT IMAGE */
+
+.right{
+width:60%;
+}
+
+.right img{
+width:100%;
+height:100vh;
+object-fit:cover;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDE -->
+
+<div class="left">
+
+<img src="logo.png" class="logo">
+
+<div class="login-box">
+
+<div class="switch">
+<button onclick="showAdmin()">Admin</button>
+<button onclick="showFaculty()">Faculty</button>
+</div>
+
+<h2 id="formTitle">Admin Login</h2>
+
+<form id="loginForm">
+
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+<div class="extra" id="facultyExtra" style="display:none;">
+Don't have an account? <a onclick="showSignup()">Register</a>
+</div>
+
+</form>
+
+<form id="signupForm" style="display:none;">
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+
+<button type="submit">Sign Up</button>
+
+<div class="extra">
+Already have an account? <a onclick="showFaculty()">Login</a>
+</div>
+
+</form>
+
+</div>
+</div>
+
+<!-- RIGHT SIDE BUILDING -->
+
+<div class="right">
+<img src="building.png">
+</div>
+
+</div>
+
+<script>
+
+function showAdmin(){
+document.getElementById("formTitle").innerText="Admin Login";
+document.getElementById("loginForm").style.display="block";
+document.getElementById("signupForm").style.display="none";
+document.getElementById("facultyExtra").style.display="none";
+}
+
+function showFaculty(){
+document.getElementById("formTitle").innerText="Faculty Login";
+document.getElementById("loginForm").style.display="block";
+document.getElementById("signupForm").style.display="none";
+document.getElementById("facultyExtra").style.display="block";
+}
+
+function showSignup(){
+document.getElementById("formTitle").innerText="Faculty Sign Up";
+document.getElementById("loginForm").style.display="none";
+document.getElementById("signupForm").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
